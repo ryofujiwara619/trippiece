@@ -1,6 +1,6 @@
 .project-wrapper{
   width: 100%;
-  height: 1500px;
+  height: 1000px;
   margin: 0 auto;
   padding: 100px 0 100px 0;
   background: #e0e0e0;
@@ -24,14 +24,20 @@
       }
       &--details{
         width: 300px;
-        height: 70px;
+        height: 80px;
         background: white;
         border-bottom: 5px solid orange;
+        &--userImage{
+          padding: 10px 0 10px 10px;
+          float: left;
+          border-radius: 50%;
+        }
         &--title{
           text-align: center;
           color: gray;
           font-size: 16px;
-          padding: 10px 0 10px 0;
+          padding: 10px 0 10px 10px;
+          float: left;
         }
         &--date{
           float: left;
