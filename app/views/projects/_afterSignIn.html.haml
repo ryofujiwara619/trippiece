@@ -1,3 +1,131 @@
-%p
-  あああああああああ
-  = link_to "ログアウト", destroy_user_session_path, method: :delete
+.top-wrapper
+  .top-wrapper__upper
+    .top-wrapper__upper--left
+      trippiece
+    .top-wrapper__upper--right
+      %ul
+        %li
+          マイリスト
+        %li
+          メッセージ
+        %li
+          通知
+        %li
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link"
+        %li
+          = link_to "プロフィール", user_path(current_user.id), class: "link"
+        %li
+          = link_to "設定", edit_user_path(current_user.id), class: "link"
+        %li
+          企画を作成
+
+  .top-wrapper__middle
+    .top-wrapper__middle--title
+      .top-wrapper__middle--title--main
+        海外旅行特集
+      .top-wrapper__middle--title--sub
+        最高の海外旅行体験を、 trippieceで
+  .top-wrapper__bottom
+
+.project-wrapper
+  %h1
+    おすすめ企画
+  .project-wrapper__projects
+    .project-wrapper__projects--content
+      .project-wrapper__projects--content--image
+        =image_tag "IMG_0741.jpg", size: "300x200"
+      .project-wrapper__projects--content--details
+        .project-wrapper__projects--content--details--userImage
+          =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
+        .project-wrapper__projects--content--details--title
+          ポルトガルへ行こう
+        .project-wrapper__projects--content--details--date.clearfix
+          2018年2月
+
+    .project-wrapper__projects--content
+      .project-wrapper__projects--content--image
+        =image_tag "IMG_9557.jpg", size: "300x200"
+      .project-wrapper__projects--content--details
+        .project-wrapper__projects--content--details--userImage
+          =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
+        .project-wrapper__projects--content--details--title
+          カンボジアへ行こう
+        .project-wrapper__projects--content--details--date.clearfix
+          2018年2月
+
+    .project-wrapper__projects--content
+      .project-wrapper__projects--content--image
+        =image_tag "IMG_0365.jpg", size: "300x200"
+      .project-wrapper__projects--content--details
+        .project-wrapper__projects--content--details--userImage
+          =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
+        .project-wrapper__projects--content--details--title
+          チェコへ行こう
+        .project-wrapper__projects--content--details--date.clearfix
+          2018年2月
+
+    .project-wrapper__projects--content
+      .project-wrapper__projects--content--image
+        =image_tag "IMG_0625.jpg", size: "300x200"
+      .project-wrapper__projects--content--details
+        .project-wrapper__projects--content--details--userImage
+          =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
+        .project-wrapper__projects--content--details--title
+          スペインへ行こう
+        .project-wrapper__projects--content--details--date.clearfix
+          2018年2月
+
+    .project-wrapper__projects--content
+      .project-wrapper__projects--content--image
+        =image_tag "IMG_2240.jpg", size: "300x200"
+      .project-wrapper__projects--content--details
+        .project-wrapper__projects--content--details--userImage
+          =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
+        .project-wrapper__projects--content--details--title
+          モロッコへ行こう
+        .project-wrapper__projects--content--details--date.clearfix
+          2018年2月
+
+    .project-wrapper__projects--content
+      .project-wrapper__projects--content--image
+        =image_tag "IMG_9931.jpg", size: "300x200"
+      .project-wrapper__projects--content--details
+        .project-wrapper__projects--content--details--userImage
+          =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
+        .project-wrapper__projects--content--details--title
+          シンガポールへ行こう
+        .project-wrapper__projects--content--details--date.clearfix
+          2018年2月
+
+    .project-wrapper__projects--content
+      .project-wrapper__projects--content--image
+        =image_tag "IMG_1692.jpg", size: "300x200"
+      .project-wrapper__projects--content--details
+        .project-wrapper__projects--content--details--userImage
+          =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
+        .project-wrapper__projects--content--details--title
+          インドへ行こう
+        .project-wrapper__projects--content--details--date.clearfix
+          2018年2月
+
+    .project-wrapper__projects--content
+      .project-wrapper__projects--content--image
+        =image_tag "IMG_3450.jpg", size: "300x200"
+      .project-wrapper__projects--content--details
+        .project-wrapper__projects--content--details--userImage
+          =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
+        .project-wrapper__projects--content--details--title
+          ロシアへ行こう
+        .project-wrapper__projects--content--details--date.clearfix
+          2018年2月
+
+    .project-wrapper__projects--content
+      .project-wrapper__projects--content--image
+        =image_tag "IMG_7500.jpg", size: "300x200"
+      .project-wrapper__projects--content--details
+        .project-wrapper__projects--content--details--userImage
+          =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
+        .project-wrapper__projects--content--details--title
+          モンゴルへ行こう
+        .project-wrapper__projects--content--details--date.clearfix
+          2018年2月
