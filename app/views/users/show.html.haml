@@ -1,0 +1,58 @@
+.top-wrapper
+  .top-wrapper__upper
+    .top-wrapper__upper--left
+      = link_to "trippiece", root_path, class: "link"
+    .top-wrapper__upper--right
+      %ul
+        %li
+          マイリスト
+        %li
+          メッセージ
+        %li
+          通知
+        %li
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link"
+        %li
+          = link_to "プロフィール", user_path(current_user.id), class: "link"
+        %li
+          = link_to "設定", edit_user_path(current_user.id), class: "link"
+        %li
+          企画を作成
+
+.main-wrapper
+  .main-wrapper--profile
+    .main-wrapper--profile--top
+      =image_tag "IMG_9087.jpg", size: "900x300"
+    .main-wrapper--profile--profileImage
+      =image_tag "mig.jpg", class: "profileimage"
+    .main-wrapper--profile--middle
+      .main-wrapper--profile--middle--name
+        = current_user.name
+      %ul.main-wrapper--profile--middle--projects
+        %li
+          .main-wrapper--profile--middle--projects--count
+            0
+          .main-wrapper--profile--middle--projects--text
+            参加した企画
+        %li
+          .main-wrapper--profile--middle--projects--count
+            0
+          .main-wrapper--profile--middle--projects--text
+            申し込み済の企画
+        %li
+          .main-wrapper--profile--middle--projects--count
+            0
+          .main-wrapper--profile--middle--projects--text
+            お気に入り企画
+        %li
+          .main-wrapper--profile--middle--projects--count
+            0
+          .main-wrapper--profile--middle--projects--text
+            作成した企画
+
+    .main-wrapper--profile--bottom
+      .main-wrapper--profile--bottom--title
+        自己紹介
+      .main-wrapper--profile--bottom--text
+        自己紹介はまだありません。
+  .main-wrapper--projects
