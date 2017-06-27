@@ -1,0 +1,92 @@
+.login{
+  background-image: url("world_map_02.jpg");
+  background-size: cover;
+  height:100%;
+  width: 100%;
+  text-align: center;
+  padding: 50px 0 200px 0;
+
+  h2{
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    }
+
+  .login__forms{
+    width: 50%;
+    margin: 0 auto;
+    &--upper{
+      margin-bottom: 50px;
+      p{
+        font-size: 12px;
+        color: #eee;
+        text-align: center;
+        margin: 5px;
+        }
+      &--bySns{
+        &--google{
+          width: 210px;
+          height: 30px;
+          line-height: 30px;
+          background: #cd5e3c;
+          padding: 10px 20px;
+          margin-left: 80px;
+          float: left;
+          color: white;
+          font-size:16px;
+        }
+        &--facebook{
+          width: 210px;
+          height: 30px;
+          line-height: 30px;
+          font-size: 14px;
+          background: #1e50a2;
+          padding: 10px 20px;
+          margin-right: 80px;
+          float: right;
+          color: white;
+          font-size:16px;
+        }
+      }
+    }
+    &--bottom{
+      p{
+        color: #eee;
+        font-size: 12px;
+        margin-bottom: 20px;
+      }
+      &--byEmail{
+        width: 70%;
+        margin: 0 auto;
+        .form{
+          height: 40px;
+          width: 200px;
+        }
+        &--address{
+          float: left;
+        }
+        &--password{
+          float: right;
+        }
+        &--loginBtn{
+
+        }
+        .loginbtn{
+            height: 40px;
+            width: 150px;
+            background: orange;
+            color: white;
+            border: none;
+            font-size: 12px;
+            margin-bottom: 20px;
+          }
+      }
+    }
+  }
+}
+
+.clearfix{
+  content: "";
+  display: block;
+  clear: both;
+}
