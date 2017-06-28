@@ -1,0 +1,80 @@
+.edit-wrapper{
+  background: #e0e0e0;
+  height: 1000px;
+  padding-top: 100px;
+  &__main{
+    width: 900px;
+    height: 900px;
+    margin: 0 auto;
+    background: white;
+    &--left{
+      float: left;
+      width: 200px;
+      height: 900px;
+      border-right: 1px solid #e0e0e0;
+      padding-top: 40px;
+      padding-left: 20px;
+      font-size: 16px;
+      color: #d0d0d0;
+    }
+    &--right{
+      float: left;
+      padding-top: 30px;
+      padding-left: 20px;
+      font-size: 16px;
+      color: #d0d0d0;
+      .form{
+        height: 30px;
+        width: 300px;
+      }
+      &--image{
+        margin-top: 20px;
+        .label{
+          float: left;
+        }
+        &--contents{
+          margin-top: 10px;
+          float: left;
+          &--icon{
+          float: left;
+          margin-top: 10px;
+          margin-right: 10px;
+        }
+          &--text{
+            float: left;
+            padding-top: 10px;
+            width: 300px;
+            position: relative;
+            .upload{
+              line-height: 90px;
+              font-size: 16px;
+              margin: 40px 0px;
+              margin: 0 auto;
+              cursor: pointer;
+              position:absolute;
+              left: 5px;
+            }
+          }
+        }
+      }
+      &--selfIntroduction{
+        margin-top: 300px;
+        .text-form{
+          height: 300px;
+          width: 500px;
+        }
+      }
+      &--editBtn{
+        .editBtn{
+        width: 150px;
+        height: 30px;
+        background: orange;
+        border: none;
+        margin-top: 50px;
+        color: white;
+        margin-left: 100px;
+      }
+      }
+    }
+  }
+}

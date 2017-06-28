@@ -1,0 +1,50 @@
+.login
+  %h2
+    trippiece
+  .login__forms
+    .login__forms--upper
+      %p.clearfix
+        利用規約とプライバシーポリシーに同意の上お進み下さい。
+      .login__forms--upper--bySns
+        .login__forms--upper--bySns--google
+          google+でログイン
+        .login__forms--upper--bySns--facebook
+          Facebookでログイン
+      %p.clearfix
+        trippieceが許可無くSNSへ投稿することはありません。
+
+    .login__forms--bottom
+      %p
+        メールアドレスでご登録の方は
+      .login__forms--bottom--byEmail
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .login__forms--bottom--byEmail--address
+            = f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: "form"
+          .login__forms--bottom--byEmail--password
+            = f.password_field :password, autocomplete: "off", placeholder: "パスワード", class: "form"
+            %p.clearfix
+              パスワードを忘れた場合
+          .login__forms--bottom--byEmail--loginBtn.clearfix
+            = f.submit "ログイン", class: "loginbtn"
+            %p
+              初めての方はこちら
+
+
+
+  -# %h2 Log in
+  -# = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  -#   .field
+  -#     = f.label :email
+  -#     %br/
+  -#     = f.email_field :email, autofocus: true
+  -#   .field
+  -#     = f.label :password
+  -#     %br/
+  -#     = f.password_field :password, autocomplete: "off"
+  -#   - if devise_mapping.rememberable?
+  -#     .field
+  -#       = f.check_box :remember_me
+  -#       = f.label :remember_me
+  -#   .actions
+  -#     = f.submit "Log in"
+  -# = render "devise/shared/links"

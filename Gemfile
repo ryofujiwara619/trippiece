@@ -42,6 +42,9 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'haml-rails'
   gem 'erb2haml'
+  gem 'devise'
+  gem 'carrierwave'
+  gem 'mini_magick'
 end
 
 group :development do
