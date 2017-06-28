@@ -24,7 +24,7 @@
     .main-wrapper--profile--top
       =image_tag "IMG_9087.jpg", size: "900x300"
     .main-wrapper--profile--profileImage
-      =image_tag "mig.jpg", class: "profileimage"
+      =image_tag current_user.image , class: "profileimage"
     .main-wrapper--profile--middle
       .main-wrapper--profile--middle--name
         = current_user.name
