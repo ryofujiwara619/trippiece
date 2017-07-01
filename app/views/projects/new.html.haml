@@ -1,0 +1,126 @@
+.top-wrapper
+  .top-wrapper__upper
+    .top-wrapper__upper--left
+      = link_to "trippiece", root_path, class: "link"
+    .top-wrapper__upper--right
+      %ul
+        %li
+          マイリスト
+        %li
+          メッセージ
+        %li
+          通知
+        %li
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link"
+        %li
+          = link_to "プロフィール", user_path(current_user.id), class: "link"
+        %li
+          = link_to "設定", edit_user_path(current_user.id), class: "link"
+        %li
+          = link_to "企画を作成", new_project_path, class: "link"
+
+-#editと共通
+.projectCreate-wrapper
+  = form_for @project do |f|
+    .projectCreate-wrapper__top
+      %p
+        まずはざっくりと企画の基本情報を入力してみましょう。後から編集もできるので、詳細が決まったらどんどん編集して、企画ページを充実させていきましょう！
+      .projectCreate-wrapper__top--title
+        .projectCreate-wrapper__top--title--left
+          = f.text_field :title, class: "form"
+        .projectCreate-wrapper__top--title--right
+          タイトル
+
+      .projectCreate-wrapper__top--image.clearfix
+        .projectCreate-wrapper__top--image--left
+          =image_tag "IMG_0612.jpg", size: "600x500", class: "image"
+          .projectCreate-wrapper__top--image--left--content
+            .projectCreate-wrapper__top--image--left--content--upload
+              = f.label :image, class: "uploadBtn" do
+                アップロード
+                = f.file_field :image, style: "display:none"
+        .projectCreate-wrapper__top--image--right
+          企画の画像
+
+
+      .projectCreate-wrapper__top--introduction.clearfix
+        .projectCreate-wrapper__top--introduction--left
+          .projectCreate-wrapper__top--introduction--left--userInfo
+            = image_tag current_user.image , class: "profileimage"
+            .projectCreate-wrapper__top--introduction--left--userInfo--userName
+              = current_user.name
+          .projectCreate-wrapper__top--introduction--left--text.clearfix
+            = f.text_field :introduction, class: "form"
+        .projectCreate-wrapper__top--introduction--right
+          旅への思い
+
+    .projectCreate-wrapper__bottom.clearfix
+      .projectCreate-wrapper__bottom--date
+        .projectCreate-wrapper__bottom--date--left
+          = f.label :departure_date, value: "日程 :"
+        .projectCreate-wrapper__bottom--date--right
+          .projectCreate-wrapper__bottom--date--right--from
+            = f.label :departure_date, value: "開始日 :", class: "label"
+            = f.date_select :departure_date, {:use_month_numbers => true,start_year: 2017, end_year: 2018}, class: 'form-control'
+          .projectCreate-wrapper__bottom--date--right--until
+            = f.label :finish_date, value: "終了日 :", class: "label"
+            = f.date_select :finish_date, {:use_month_numbers => true,start_year: 2017, end_year: 2018}, class: 'form-control'
+
+      .projectCreate-wrapper__bottom--destination.clearfix
+        .projectCreate-wrapper__bottom--destination--left
+          = f.label :destination, value: "行き先 :", class: "label"
+          .projectCreate-wrapper__bottom--destination--left--form
+            = f.text_field :destination, class: "form"
+
+      .projectCreate-wrapper__bottom--detail.clearfix
+        .projectCreate-wrapper__bottom--detail--left
+          .projectCreate-wrapper__bottom--detail--left--text.clearfix
+            = f.text_field :introduction, class: "form"
+        -# .projectCreate-wrapper__bottom--detail--right.clearfix
+        -#   旅への思い
+
+    .projectCreate-wrapper__submitBtn.clearfix
+      = f.submit "送信する", class: "submit"
+
+
+
+
+
+
+
+
+
+
+
+
+
+  -# .projectCreate-wrapper__main
+  -#   = form_for @project do |f|
+  -#     %h2
+  -#       企画を作成する
+      -# .projectCreate-wrapper__main--date
+      -#   .projectCreate-wrapper__main--date--left
+      -#     = f.label :date, value: "日程"
+      -#     .projectCreate-wrapper__main--date--left--from
+      -#       = f.label :date, value: "開始日 :", class: "label"
+      -#       = f.date_select :date, {:use_month_numbers => true,start_year: 2017, end_year: 2018}, class: 'form-control'
+      -#     .projectCreate-wrapper__main--date--left--until
+      -#       = f.label :date, value: "終了日 :", class: "label"
+      -#       = f.date_select :date, {:use_month_numbers => true,start_year: 2017, end_year: 2018}, class: 'form-control'
+  -#       .projectCreate-wrapper__main--date--right
+  -#         日程が未決定の場合は、「未定」を選んで下さい
+
+  -#     .projectCreate-wrapper__main--destination
+  -#       .projectCreate-wrapper__main--destination--left
+  -#         = f.label :destination, value: "場所"
+  -#         %p
+  -#           設定されていません
+
+  -#     .projectCreate-wrapper__main--activity
+  -#       .projectCreate-wrapper__main--activity--left
+  -#         = f.label :activity, value: "アクティビティ"
+  -#         %p
+  -#           設定されていません
+
+  -#     .nextBtn
+  -#       = link_to "次へ", "/" class: "link"
