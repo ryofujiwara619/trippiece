@@ -17,7 +17,7 @@
         %li
           = link_to "設定", edit_user_path(current_user.id), class: "link"
         %li
-          企画を作成
+          = link_to "企画を作成", new_project_path, class: "link"
 
 .edit-wrapper
   .edit-wrapper__main
@@ -36,8 +36,9 @@
               =image_tag "IMG_9087.jpg", size: "100x100", style: "border-radius:50%;"
             .edit-wrapper__main--right--image--contents--text
               顔写真は旅行者がお互いを知るためにとても重要な要素です。あなたのことがはっきりわかる、最高のプロフィール写真を選びましょう！
-              = f.label :image, class:"upload" do
-                = f.file_field :image
+              = f.label :image, class: "upload" do
+                アップロード
+                = f.file_field :image, style: "display:none"
         .edit-wrapper__main--right--selfIntroduction.clearfix
           = f.label :selfintroduction, value: "自己紹介", class: "label"
           %br
