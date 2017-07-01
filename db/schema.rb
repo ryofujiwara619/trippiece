@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170628053222) do
+ActiveRecord::Schema.define(version: 20170701022623) do
 
   create_table "projects", force: :cascade do |t|
     t.text     "title",                limit: 65535, null: false
-    t.string   "date",                 limit: 255,   null: false
     t.string   "destination",          limit: 255,   null: false
     t.string   "activity",             limit: 255
     t.text     "introduction",         limit: 65535, null: false
@@ -27,6 +26,8 @@ ActiveRecord::Schema.define(version: 20170628053222) do
     t.integer  "minimum_participants", limit: 4
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
+    t.date     "departure_date"
+    t.date     "finish_date"
   end
 
   create_table "users", force: :cascade do |t|
