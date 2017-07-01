@@ -188,14 +188,14 @@
     }
   }
   &__submitBtn{
-    padding-left: 460px;
+    padding-left: 420px;
+    padding-top: 100px;
     .submit{
-      background: orange;
-      width: 100px;
-      height: 30px;
-      padding: 0px 20px;
-      color: white;
-      border: none;
+      width: 150px;
+        height: 30px;
+        background: orange;
+        border: none;
+        color: white;
     }
   }
 }

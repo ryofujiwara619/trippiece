@@ -27,7 +27,7 @@
         まずはざっくりと企画の基本情報を入力してみましょう。後から編集もできるので、詳細が決まったらどんどん編集して、企画ページを充実させていきましょう！
       .projectCreate-wrapper__top--title
         .projectCreate-wrapper__top--title--left
-          = f.text_field :title, class: "form"
+          = f.text_field :title, class: "form", placeholder: "(例)インドへ行こう"
         .projectCreate-wrapper__top--title--right
           タイトル
 
@@ -50,7 +50,7 @@
             .projectCreate-wrapper__top--introduction--left--userInfo--userName
               = current_user.name
           .projectCreate-wrapper__top--introduction--left--text.clearfix
-            = f.text_field :introduction, class: "form"
+            = f.text_field :introduction, class: "form", placeholder: "(例)年末にインドに行きたいと考えています。"
         .projectCreate-wrapper__top--introduction--right
           旅への思い
 
@@ -61,6 +61,7 @@
         .projectCreate-wrapper__bottom--date--right
           .projectCreate-wrapper__bottom--date--right--from
             = f.label :departure_date, value: "開始日 :", class: "label"
+            -# = sprintf(f.date_select(:use_month_numbers => true,start_year: 2017, end_year: 2018, :date_separator => '%s'), '年', '月') + '日'}, class: 'form-control'
             = f.date_select :departure_date, {:use_month_numbers => true,start_year: 2017, end_year: 2018}, class: 'form-control'
           .projectCreate-wrapper__bottom--date--right--until
             = f.label :finish_date, value: "終了日 :", class: "label"
@@ -70,12 +71,12 @@
         .projectCreate-wrapper__bottom--destination--left
           = f.label :destination, value: "行き先 :", class: "label"
           .projectCreate-wrapper__bottom--destination--left--form
-            = f.text_field :destination, class: "form"
+            = f.text_field :destination, class: "form", placeholder: "(例)インド"
 
       .projectCreate-wrapper__bottom--detail.clearfix
         .projectCreate-wrapper__bottom--detail--left
           .projectCreate-wrapper__bottom--detail--left--text.clearfix
-            = f.text_field :introduction, class: "form"
+            = f.text_field :introduction, class: "form", placeholder: "(例)年末にインドに行きたいと考えています。"
         -# .projectCreate-wrapper__bottom--detail--right.clearfix
         -#   旅への思い
 
