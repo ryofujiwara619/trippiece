@@ -46,13 +46,17 @@
             width: 300px;
             position: relative;
             .upload{
-              line-height: 90px;
+              
               font-size: 16px;
               margin: 40px 0px;
               margin: 0 auto;
               cursor: pointer;
               position:absolute;
               left: 5px;
+              top: 120px;
+              background: orange;
+              color: white;
+              padding: 10px 20px;
             }
           }
         }

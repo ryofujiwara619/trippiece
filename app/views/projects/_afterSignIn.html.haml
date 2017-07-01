@@ -1,7 +1,7 @@
 .top-wrapper
   .top-wrapper__upper
     .top-wrapper__upper--left
-      trippiece
+      = link_to "trippiece", root_path, class: "link"
     .top-wrapper__upper--right
       %ul
         %li
@@ -17,7 +17,7 @@
         %li
           = link_to "設定", edit_user_path(current_user.id), class: "link"
         %li
-          企画を作成
+          = link_to "企画を作成", new_project_path, class: "link"
 
   .top-wrapper__middle
     .top-wrapper__middle--title
