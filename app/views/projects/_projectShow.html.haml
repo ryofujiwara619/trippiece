@@ -1,0 +1,46 @@
+.project-show-wrapper
+  .project-show-wrapper__title
+    = @project.title
+    %p
+      企画詳細
+  .project-show-wrapper__contents
+    .project-show-wrapper__contents--left
+      .project-show-wrapper__contents--left--top
+        .project-show-wrapper__contents--left--top--image
+          = image_tag @project.image, size: "600x500"
+        .project-show-wrapper__contents--left--top--userInfo
+          .project-show-wrapper__contents--left--top--userInfo--image
+            =image_tag "IMG_9087.jpg", size: "80x80", style: "border-radius:50%;"
+          .project-show-wrapper__contents--left--top--userInfo--name
+            あああ
+        .project-show-wrapper__contents--left--top--introduction
+          = @project.introduction
+
+      .project-show-wrapper__contents--left--bottom
+        .project-show-wrapper__contents--left--bottom--info
+          .project-show-wrapper__contents--left--bottom--info--li
+            .project-show-wrapper__contents--left--bottom--info--li--label
+              日程
+            .project-show-wrapper__contents--left--bottom--info--li--content
+              = @project.departure_date.strftime("%Y年%m月%d日") + "から" + @project.finish_date.strftime("%Y年%m月%d日")
+          .project-show-wrapper__contents--left--bottom--info--li
+            .project-show-wrapper__contents--left--bottom--info--li--label
+              価格
+            .project-show-wrapper__contents--left--bottom--info--li--content
+              未定
+          .project-show-wrapper__contents--left--bottom--info--li
+            .project-show-wrapper__contents--left--bottom--info--li--label
+              行き先
+            .project-show-wrapper__contents--left--bottom--info--li--content
+              .project-show-wrapper__contents--left--bottom--info--li--content--orange
+                = @project.destination
+
+        .project-show-wrapper__contents--left--bottom--activity.clearfix
+          .project-show-wrapper__contents--left--bottom--activity--label
+            アクティビティ
+          .project-show-wrapper__contents--left--bottom--activity--content
+            観光
+
+        .project-show-wrapper__contents--left--bottom--detail.clearfix
+          あああ
+
