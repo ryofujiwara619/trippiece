@@ -46,7 +46,7 @@
             お気に入り企画
         %li
           .main-wrapper--profile--middle--projects--count
-            0
+            = @projects.count
           .main-wrapper--profile--middle--projects--text
             作成した企画
 
@@ -56,3 +56,19 @@
       .main-wrapper--profile--bottom--text
         = current_user.selfintroduction
   .main-wrapper--projects
+
+.project-wrapper
+  %h1
+    = current_user.name + "さんの企画一覧"
+  .project-wrapper__projects
+    - @projects.each do |project|
+      .project-wrapper__projects--content
+        .project-wrapper__projects--content--image
+          = image_tag project.image, size: "300x200"
+        .project-wrapper__projects--content--details
+          .project-wrapper__projects--content--details--userImage
+            = image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
+          .project-wrapper__projects--content--details--title
+            = link_to project.title, project_path(project.id)
+          .project-wrapper__projects--content--details--date.clearfix
+            = project.departure_date.strftime("%Y年%m月")
