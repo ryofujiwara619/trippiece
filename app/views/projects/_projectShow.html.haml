@@ -1,6 +1,6 @@
 .project-show-wrapper
   .project-show-wrapper__title.clearfix
-    = @project.title
+    = "【" + @project.title + "】"
     .project-show-wrapper__title--left
       企画詳細
   - if user_signed_in? && current_user.id === @project.planner_id
@@ -48,3 +48,12 @@
         .project-show-wrapper__contents--left--bottom--detail.clearfix
           あああ
 
+    - unless current_user.id === @project.planner_id
+      .project-show-wrapper__contents--right
+        .project-show-wrapper__contents--right--apply
+          %p
+            企画のステータス
+          .project-show-wrapper__contents--right--apply--status
+            申し込み受付中
+          .project-show-wrapper__contents--right--apply--applyBtn
+            = link_to "申し込む", new_project_participant_path(@project.id), class: "applyBtn"

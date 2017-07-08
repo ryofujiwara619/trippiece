@@ -1,0 +1,58 @@
+.top-wrapper
+  .top-wrapper__upper
+    .top-wrapper__upper--left
+      = link_to "trippiece", root_path, class: "link"
+    .top-wrapper__upper--right
+      %ul
+        %li
+          マイリスト
+        %li
+          メッセージ
+        %li
+          通知
+        %li
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link"
+        %li
+          = link_to "プロフィール", user_path(current_user.id), class: "link"
+        %li
+          = link_to "設定", edit_user_path(current_user.id), class: "link"
+        %li
+          = link_to "企画を作成", new_project_path, class: "link"
+
+.participant-wrapper
+  .participant-wrapper__title
+    = "【" + @project.title + "】"
+    %br
+    〜申込者情報入力〜
+  .participant-wrapper__forms
+    = form_for [@project, @participant] do |f|
+      .participant-wrapper__forms--name
+        = f.label :name, value: "名前", class: "label"
+        %br
+        = f.text_field :name, class: "form", value: current_user.name
+
+      .participant-wrapper__forms--birthday
+        = f.label :birthday, value: "生年月日", class: "label"
+        %br
+        = f.date_select :birthday, {:use_month_numbers => true,start_year: 1945, end_year: 2002}, class: 'form-control'
+
+      .participant-wrapper__forms--address
+        = f.label :address, value: "住所", class: "label"
+        %br
+        = f.text_field :address, class: "form"
+
+      .participant-wrapper__forms--tellnumber
+        = f.label :tellnumber, value: "電話番号", class: "label"
+        %br
+        = f.text_field :tellnumber, class: "form"
+
+      .participant-wrapper__forms--email
+        = f.label :email, value: "メールアドレス", class: "label"
+        %br
+        = f.text_field :email, class: "form", value: current_user.email
+
+      .participant-wrapper__forms--btn
+        = f.submit "送信する", class: "submit"
+
+
+

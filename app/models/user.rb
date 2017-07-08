@@ -5,8 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   mount_uploader :image, ImageUploader
-  # has_many :projects, through: :participants
-  # has_many :participants
   has_many :projects, through: :planners
   has_many :planners
 end

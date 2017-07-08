@@ -9,6 +9,7 @@ class Project < ActiveRecord::Base
   # has_many :users, through: :participants
   # has_many :participants
   # accepts_nested_attributes_for :participants
+  has_many :participants
 
   has_one :user, through: :planners
   has_many :planners
