@@ -11,13 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170708020855) do
+ActiveRecord::Schema.define(version: 20170708081538) do
 
   create_table "participants", force: :cascade do |t|
-    t.integer  "user_id",    limit: 4, null: false
-    t.integer  "project_id", limit: 4, null: false
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.string   "name",       limit: 255,   null: false
+    t.date     "birthday",                 null: false
+    t.text     "address",    limit: 65535, null: false
+    t.string   "tellnumber", limit: 255,   null: false
+    t.text     "email",      limit: 65535, null: false
+    t.integer  "project_id", limit: 4,     null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "planners", force: :cascade do |t|
