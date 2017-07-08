@@ -4,15 +4,28 @@
   &__title{
     color: gray;
     font-size: 24px;
-    border-bottom: 1px solid gray;
-    margin-bottom: 20px;
-    p{
-      padding-top: 30px;
+    &--left{
+      padding-top: 40px;
       font-size: 20px;
+      float: left;
+    }
+    &--right{
+      float: right;
       padding-bottom: 10px;
+      .link{
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+        width: 100px;
+        height: 30px;
+        background: orange;
+        padding: 10px 20px;
+      }
     }
   }
   &__contents{
+    border-top: 1px solid gray;
+    padding-top: 20px;
     &--left{
       width: 600px;
       &--top{
