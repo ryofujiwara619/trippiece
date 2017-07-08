@@ -1,0 +1,65 @@
+.participant-wrapper{
+  background: #e0e0e0;
+  padding-top: 100px;
+  height: 1000px;
+  &__title{
+    width: 1200px;
+    height: 100px;
+    background: #000066;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    padding-top: 30px;
+    font-size: 24px;
+    -webkit-text-stroke-color: #000;
+    -webkit-text-stroke-width: 1px;
+    font-weight: bold;
+  }
+  &__forms{
+    width: 600px;
+    background: white;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px;
+    &--name{
+    }
+    &--birthday{
+      margin-top: 20px;
+    }
+    &--address{
+      margin-top: 20px;
+    }
+    &--tellnumber{
+      margin-top: 20px;
+    }
+    &--email{
+      margin-top: 20px;
+    }
+    &--btn{
+      margin-top: 50px;
+    }
+  }
+}
+
+.label{
+  color: gray;
+}
+
+.form{
+  width: 100%;
+  margin-top: 10px;
+  outline: 0;
+}
+
+.form-control{
+  margin: 10px;
+}
+
+.submit{
+  width: 150px;
+  height: 30px;
+  background: orange;
+  border: none;
+  color: white;
+  margin: 0 auto;
+}
