@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    @projects = current_user.projects
   end
 
   def update
