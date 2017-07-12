@@ -1,5 +1,6 @@
 class ParticipantsController < ApplicationController
 before_action :authenticate_user!
+before_action :userProject
   def new
     @project = Project.find(project_params)
     @participant = Participant.new
@@ -22,5 +23,11 @@ before_action :authenticate_user!
 
   def participant_params
     params.require(:participant).permit(:name, :birthday, :address, :tellnumber, :email).merge(project_id: @project.id)
+  end
+
+  def userProject
+    if user_signed_in?
+      @user_projects = Project.where(planner_id: current_user.id)
+    end
   end
 end
