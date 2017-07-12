@@ -1,23 +1,4 @@
-.top-wrapper
-  .top-wrapper__upper
-    .top-wrapper__upper--left
-      = link_to "trippiece", root_path, class: "link"
-    .top-wrapper__upper--right
-      %ul
-        %li
-          マイリスト
-        %li
-          メッセージ
-        %li
-          通知
-        %li
-          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link"
-        %li
-          = link_to "プロフィール", user_path(current_user.id), class: "link"
-        %li
-          = link_to "設定", edit_user_path(current_user.id), class: "link"
-        %li
-          = link_to "企画を作成", new_project_path, class: "link"
+= render "topWrapper"
 
 -#editと共通
 .projectCreate-wrapper
@@ -50,7 +31,7 @@
             .projectCreate-wrapper__top--introduction--left--userInfo--userName
               = current_user.name
           .projectCreate-wrapper__top--introduction--left--text.clearfix
-            = f.text_field :introduction, class: "form", placeholder: "(例)年末にインドに行きたいと考えています。"
+            = f.text_area :introduction, class: "form", placeholder: "(例)年末にインドに行きたいと考えています。"
         .projectCreate-wrapper__top--introduction--right
           旅への思い
 
@@ -76,52 +57,15 @@
       .projectCreate-wrapper__bottom--detail.clearfix
         .projectCreate-wrapper__bottom--detail--left
           .projectCreate-wrapper__bottom--detail--left--text.clearfix
-            = f.text_field :introduction, class: "form", placeholder: "(例)年末にインドに行きたいと考えています。"
+            = f.text_area :introduction, class: "form", placeholder: "(例)年末にインドに行きたいと考えています。"
         -# .projectCreate-wrapper__bottom--detail--right.clearfix
         -#   旅への思い
 
     .projectCreate-wrapper__submitBtn.clearfix
       = f.submit "送信する", class: "submit"
 
-
-
-
-
-
-
-
-
-
-
-
-
-  -# .projectCreate-wrapper__main
-  -#   = form_for @project do |f|
-  -#     %h2
-  -#       企画を作成する
-      -# .projectCreate-wrapper__main--date
-      -#   .projectCreate-wrapper__main--date--left
-      -#     = f.label :date, value: "日程"
-      -#     .projectCreate-wrapper__main--date--left--from
-      -#       = f.label :date, value: "開始日 :", class: "label"
-      -#       = f.date_select :date, {:use_month_numbers => true,start_year: 2017, end_year: 2018}, class: 'form-control'
-      -#     .projectCreate-wrapper__main--date--left--until
-      -#       = f.label :date, value: "終了日 :", class: "label"
-      -#       = f.date_select :date, {:use_month_numbers => true,start_year: 2017, end_year: 2018}, class: 'form-control'
-  -#       .projectCreate-wrapper__main--date--right
-  -#         日程が未決定の場合は、「未定」を選んで下さい
-
-  -#     .projectCreate-wrapper__main--destination
-  -#       .projectCreate-wrapper__main--destination--left
-  -#         = f.label :destination, value: "場所"
-  -#         %p
-  -#           設定されていません
-
-  -#     .projectCreate-wrapper__main--activity
-  -#       .projectCreate-wrapper__main--activity--left
-  -#         = f.label :activity, value: "アクティビティ"
-  -#         %p
-  -#           設定されていません
-
-  -#     .nextBtn
-  -#       = link_to "次へ", "/" class: "link"
+-# モーダル
+#drop-modal-wrapper
+  = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link"
+  = link_to "プロフィール", user_path(current_user.id), class: "link"
+  = link_to "設定", edit_user_path(current_user.id), class: "link"

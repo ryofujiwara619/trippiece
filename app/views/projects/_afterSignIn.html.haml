@@ -1,31 +1,105 @@
-.top-wrapper
-  .top-wrapper__upper
-    .top-wrapper__upper--left
-      = link_to "trippiece", root_path, class: "link"
-    .top-wrapper__upper--right
-      %ul
-        %li
-          マイリスト
-        %li
-          メッセージ
-        %li
-          通知
-        %li
-          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link"
-        %li
-          = link_to "プロフィール", user_path(current_user.id), class: "link"
-        %li
-          = link_to "設定", edit_user_path(current_user.id), class: "link"
-        %li
-          = link_to "企画を作成", new_project_path, class: "link"
+= render "topWrapper"
 
-  .top-wrapper__middle
-    .top-wrapper__middle--title
-      .top-wrapper__middle--title--main
-        海外旅行特集
-      .top-wrapper__middle--title--sub
+%ul.top-wrapper__middle
+  %li.top-wrapper__middle--slide.active
+    = image_tag "IMG_0276.jpg", class: "backimage"
+    .top-wrapper__middle--slide--title
+      .top-wrapper__middle--slide--title--main
+        ヨーロッパ特集
+      .top-wrapper__middle--slide--title--sub
         最高の海外旅行体験を、 trippieceで
-  .top-wrapper__bottom
+    .top-wrapper__middle--slide--changeBtns
+      .top-wrapper__middle--slide--changeBtns--changeBtn.next
+        %i.fa.fa-arrow-right#close
+
+  %li.top-wrapper__middle--slide
+    = image_tag "IMG_9558.jpg", class: "backimage"
+    .top-wrapper__middle--slide--title
+      .top-wrapper__middle--slide--title--main
+        東南アジア特集
+      .top-wrapper__middle--slide--title--sub
+        最高の海外旅行体験を、 trippieceで
+    .top-wrapper__middle--slide--changeBtns
+      .top-wrapper__middle--slide--changeBtns--changeBtn.prev
+        %i.fa.fa-arrow-left
+      .top-wrapper__middle--slide--changeBtns--changeBtn.next
+        %i.fa.fa-arrow-right
+
+  %li.top-wrapper__middle--slide
+    = image_tag "IMG_0902.jpg", class: "backimage"
+    .top-wrapper__middle--slide--title
+      .top-wrapper__middle--slide--title--main
+        東アジア特集
+      .top-wrapper__middle--slide--title--sub
+        最高の海外旅行体験を、 trippieceで
+    .top-wrapper__middle--slide--changeBtns
+      .top-wrapper__middle--slide--changeBtns--changeBtn.prev
+        %i.fa.fa-arrow-left
+      .top-wrapper__middle--slide--changeBtns--changeBtn.next
+        %i.fa.fa-arrow-right
+
+  %li.top-wrapper__middle--slide
+    = image_tag "IMG_1692.jpg", class: "backimage"
+    .top-wrapper__middle--slide--title
+      .top-wrapper__middle--slide--title--main
+        南アジア特集
+      .top-wrapper__middle--slide--title--sub
+        最高の海外旅行体験を、 trippieceで
+    .top-wrapper__middle--slide--changeBtns
+      .top-wrapper__middle--slide--changeBtns--changeBtn.prev
+        %i.fa.fa-arrow-left
+      .top-wrapper__middle--slide--changeBtns--changeBtn.next
+        %i.fa.fa-arrow-right
+
+  %li.top-wrapper__middle--slide
+    = image_tag "IMG_1692.jpg", class: "backimage"
+    .top-wrapper__middle--slide--title
+      .top-wrapper__middle--slide--title--main
+        南アジア特集
+      .top-wrapper__middle--slide--title--sub
+        最高の海外旅行体験を、 trippieceで
+    .top-wrapper__middle--slide--changeBtns
+      .top-wrapper__middle--slide--changeBtns--changeBtn.prev
+        %i.fa.fa-arrow-left
+      .top-wrapper__middle--slide--changeBtns--changeBtn.next
+        %i.fa.fa-arrow-right
+
+  %li.top-wrapper__middle--slide
+    = image_tag "IMG_2240.jpg", class: "backimage"
+    .top-wrapper__middle--slide--title
+      .top-wrapper__middle--slide--title--main
+        アフリカ特集
+      .top-wrapper__middle--slide--title--sub
+        最高の海外旅行体験を、 trippieceで
+    .top-wrapper__middle--slide--changeBtns
+      .top-wrapper__middle--slide--changeBtns--changeBtn.prev
+        %i.fa.fa-arrow-left
+      .top-wrapper__middle--slide--changeBtns--changeBtn.next
+        %i.fa.fa-arrow-right
+
+  %li.top-wrapper__middle--slide
+    = image_tag "IMG_2894.jpg", class: "backimage"
+    .top-wrapper__middle--slide--title
+      .top-wrapper__middle--slide--title--main
+        旧ユーゴ特集
+      .top-wrapper__middle--slide--title--sub
+        最高の海外旅行体験を、 trippieceで
+    .top-wrapper__middle--slide--changeBtns
+      .top-wrapper__middle--slide--changeBtns--changeBtn.prev
+        %i.fa.fa-arrow-left
+
+.top-wrapper__bottom
+  .top-wrapper__bottom--contents
+    %li
+      = image_tag "IMG_0276.jpg", size: "165x70"
+    %li
+      = image_tag "IMG_9558.jpg", size: "165x70"
+    %li
+      = image_tag "IMG_0902.jpg", size: "165x70"
+    %li
+      = image_tag "IMG_1692.jpg", size: "165x70"
+    %li
+      = image_tag "IMG_2240.jpg", size: "165x70"
 
 .project-wrapper
   %h1
@@ -43,90 +117,19 @@
           .project-wrapper__projects--content--details--date.clearfix
             = project.departure_date.strftime("%Y年%m月")
 
-    -# .project-wrapper__projects--content
-    -#   .project-wrapper__projects--content--image
-    -#     =image_tag "IMG_9242.jpg", size: "300x200"
-    -#   .project-wrapper__projects--content--details
-    -#     .project-wrapper__projects--content--details--userImage
-    -#       =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
-    -#     .project-wrapper__projects--content--details--title
-    -#       中国へ行こう
-    -#     .project-wrapper__projects--content--details--date.clearfix
-    -#       2018年2月
+-# マイリストモーダル
+#mylist-modal-wrapper
+  #mylist-modal-wrapper--head
+    企画中
+  - @user_projects.each do |project|
+    #mylist-modal-wrapper--contents.clearfix
+      #mylist-modal-wrapper--contents--image
+        = image_tag project.image, size: "40x40"
+      #mylist-modal-wrapper--contents--title
+        = link_to project.title, project_path(project.id), class: "link"
 
-    -# .project-wrapper__projects--content
-    -#   .project-wrapper__projects--content--image
-    -#     =image_tag "IMG_0546.jpg", size: "300x200"
-    -#   .project-wrapper__projects--content--details
-    -#     .project-wrapper__projects--content--details--userImage
-    -#       =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
-    -#     .project-wrapper__projects--content--details--title
-    -#       ハンガリーへ行こう
-    -#     .project-wrapper__projects--content--details--date.clearfix
-    -#       2018年2月
-
-    -# .project-wrapper__projects--content
-    -#   .project-wrapper__projects--content--image
-    -#     =image_tag "IMG_7066.jpg", size: "300x200"
-    -#   .project-wrapper__projects--content--details
-    -#     .project-wrapper__projects--content--details--userImage
-    -#       =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
-    -#     .project-wrapper__projects--content--details--title
-    -#       フィリピンへ行こう
-    -#     .project-wrapper__projects--content--details--date.clearfix
-    -#       2018年2月
-
-    -# .project-wrapper__projects--content
-    -#   .project-wrapper__projects--content--image
-    -#     =image_tag "IMG_2994.jpg", size: "300x200"
-    -#   .project-wrapper__projects--content--details
-    -#     .project-wrapper__projects--content--details--userImage
-    -#       =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
-    -#     .project-wrapper__projects--content--details--title
-    -#       クロアチアへ行こう
-    -#     .project-wrapper__projects--content--details--date.clearfix
-    -#       2018年2月
-
-    -# .project-wrapper__projects--content
-    -#   .project-wrapper__projects--content--image
-    -#     =image_tag "IMG_0329.jpg", size: "300x200"
-    -#   .project-wrapper__projects--content--details
-    -#     .project-wrapper__projects--content--details--userImage
-    -#       =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
-    -#     .project-wrapper__projects--content--details--title
-    -#       デンマークへ行こう
-    -#     .project-wrapper__projects--content--details--date.clearfix
-    -#       2018年2月
-
-    -# .project-wrapper__projects--content
-    -#   .project-wrapper__projects--content--image
-    -#     =image_tag "IMG_0902.jpg", size: "300x200"
-    -#   .project-wrapper__projects--content--details
-    -#     .project-wrapper__projects--content--details--userImage
-    -#       =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
-    -#     .project-wrapper__projects--content--details--title
-    -#       台湾へ行こう
-    -#     .project-wrapper__projects--content--details--date.clearfix
-    -#       2018年2月
-
-    -# .project-wrapper__projects--content
-    -#   .project-wrapper__projects--content--image
-    -#     =image_tag "IMG_3341.jpg", size: "300x200"
-    -#   .project-wrapper__projects--content--details
-    -#     .project-wrapper__projects--content--details--userImage
-    -#       =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
-    -#     .project-wrapper__projects--content--details--title
-    -#       ギリシャへ行こう
-    -#     .project-wrapper__projects--content--details--date.clearfix
-    -#       2018年2月
-
-    -# .project-wrapper__projects--content
-    -#   .project-wrapper__projects--content--image
-    -#     =image_tag "IMG_3145.jpg", size: "300x200"
-    -#   .project-wrapper__projects--content--details
-    -#     .project-wrapper__projects--content--details--userImage
-    -#       =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
-    -#     .project-wrapper__projects--content--details--title
-    -#       モンテネグロへ行こう
-    -#     .project-wrapper__projects--content--details--date.clearfix
-    -#       2018年2月
+-# font-awesome モーダル
+#drop-modal-wrapper
+  = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link"
+  = link_to "プロフィール", user_path(current_user.id), class: "link"
+  = link_to "設定", edit_user_path(current_user.id), class: "link"

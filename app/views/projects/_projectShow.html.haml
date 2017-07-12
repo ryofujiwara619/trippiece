@@ -48,7 +48,7 @@
         .project-show-wrapper__contents--left--bottom--detail.clearfix
           あああ
 
-    - unless current_user.id === @project.planner_id
+    - unless user_signed_in? && current_user.id === @project.planner_id
       .project-show-wrapper__contents--right
         .project-show-wrapper__contents--right--apply
           %p

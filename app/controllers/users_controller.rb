@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+before_action :userProject
   def show
     @projects = current_user.projects
   end
@@ -15,5 +16,11 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :selfintroduction, :image)
+  end
+
+  def userProject
+    if user_signed_in?
+      @user_projects = Project.where(planner_id: current_user.id)
+    end
   end
 end

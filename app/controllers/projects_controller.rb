@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+before_action :userProject
   def index
     @projects = Project.all
   end
@@ -39,5 +40,11 @@ class ProjectsController < ApplicationController
   private
   def project_params
     params.require(:project).permit(:title, :image, :introduction, :destination, :departure_date, :finish_date).merge(planner_id: current_user.id)
+  end
+
+  def userProject
+    if user_signed_in?
+      @user_projects = Project.where(planner_id: current_user.id)
+    end
   end
 end

@@ -1,0 +1,41 @@
+.top-wrapper
+  .top-wrapper__upper
+    .top-wrapper__upper--left
+      = link_to "trippiece", root_path, class: "link"
+    .top-wrapper__upper--right
+      %ul
+        %li#mylist
+          マイリスト
+        %li
+          メッセージ
+        %li
+          通知
+        %li
+          %i.fa.fa-plane
+          -# .top-wrapper__upper--right--drop-modal-wrapper
+          -#   %li
+          -#     = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link"
+          -#   %li
+          -#     = link_to "プロフィール", user_path(current_user.id), class: "link"
+          -#   %li
+          -#     = link_to "設定", edit_user_path(current_user.id), class: "link"
+
+        %li
+          = link_to "企画を作成", new_project_path, class: "link"
+
+- if user_signed_in?
+  #mylist-modal-wrapper
+    #mylist-modal-wrapper--head
+      企画中
+    - @user_projects.each do |project|
+      #mylist-modal-wrapper--contents.clearfix
+        #mylist-modal-wrapper--contents--image
+          = image_tag project.image, size: "40x40"
+        #mylist-modal-wrapper--contents--title
+          = link_to project.title, project_path(project.id), class: "link"
+
+-# font-awesome モーダル
+#drop-modal-wrapper
+  = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link"
+  = link_to "プロフィール", user_path(current_user.id), class: "link"
+  = link_to "設定", edit_user_path(current_user.id), class: "link"
