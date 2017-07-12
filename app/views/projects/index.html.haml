@@ -20,6 +20,7 @@
       .signupLinks__buttons.clearfix
         .signupLinks__buttons--upper
           .signupLinks__buttons--upper--facebook.btn
+            %i.fa.fa-facebook-official
             Facebookで新規登録/ログイン
           .signupLinks__buttons--upper--email
             = link_to "メールアドレスで新規登録", new_user_registration_path, class:"btn"
@@ -30,6 +31,7 @@
             または
         .signupLinks__buttons--bottom
           .signupLinks__buttons--bottom--google
+            %i.fa.fa-google-plus
             google+で新規登録/ログイン
     .loginLink
       = link_to "すでにユーザーの方はこちら", new_user_session_path, class:"btn"
@@ -51,93 +53,6 @@
             .project-wrapper__projects--content--details--date.clearfix
               = project.departure_date.strftime("%Y年%m月")
 
-      -# .project-wrapper__projects--content
-      -#   .project-wrapper__projects--content--image
-      -#     =image_tag "IMG_9557.jpg", size: "300x200"
-      -#   .project-wrapper__projects--content--details
-      -#     .project-wrapper__projects--content--details--userImage
-      -#       =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
-      -#     .project-wrapper__projects--content--details--title
-      -#       カンボジアへ行こう
-      -#     .project-wrapper__projects--content--details--date.clearfix
-      -#       2018年2月
-
-      -# .project-wrapper__projects--content
-      -#   .project-wrapper__projects--content--image
-      -#     =image_tag "IMG_0365.jpg", size: "300x200"
-      -#   .project-wrapper__projects--content--details
-      -#     .project-wrapper__projects--content--details--userImage
-      -#       =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
-      -#     .project-wrapper__projects--content--details--title
-      -#       チェコへ行こう
-      -#     .project-wrapper__projects--content--details--date.clearfix
-      -#       2018年2月
-
-      -# .project-wrapper__projects--content
-      -#   .project-wrapper__projects--content--image
-      -#     =image_tag "IMG_0625.jpg", size: "300x200"
-      -#   .project-wrapper__projects--content--details
-      -#     .project-wrapper__projects--content--details--userImage
-      -#       =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
-      -#     .project-wrapper__projects--content--details--title
-      -#       スペインへ行こう
-      -#     .project-wrapper__projects--content--details--date.clearfix
-      -#       2018年2月
-
-      -# .project-wrapper__projects--content
-      -#   .project-wrapper__projects--content--image
-      -#     =image_tag "IMG_2240.jpg", size: "300x200"
-      -#   .project-wrapper__projects--content--details
-      -#     .project-wrapper__projects--content--details--userImage
-      -#       =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
-      -#     .project-wrapper__projects--content--details--title
-      -#       モロッコへ行こう
-      -#     .project-wrapper__projects--content--details--date.clearfix
-      -#       2018年2月
-
-      -# .project-wrapper__projects--content
-      -#   .project-wrapper__projects--content--image
-      -#     =image_tag "IMG_9931.jpg", size: "300x200"
-      -#   .project-wrapper__projects--content--details
-      -#     .project-wrapper__projects--content--details--userImage
-      -#       =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
-      -#     .project-wrapper__projects--content--details--title
-      -#       シンガポールへ行こう
-      -#     .project-wrapper__projects--content--details--date.clearfix
-      -#       2018年2月
-
-      -# .project-wrapper__projects--content
-      -#   .project-wrapper__projects--content--image
-      -#     =image_tag "IMG_1692.jpg", size: "300x200"
-      -#   .project-wrapper__projects--content--details
-      -#     .project-wrapper__projects--content--details--userImage
-      -#       =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
-      -#     .project-wrapper__projects--content--details--title
-      -#       インドへ行こう
-      -#     .project-wrapper__projects--content--details--date.clearfix
-      -#       2018年2月
-
-      -# .project-wrapper__projects--content
-      -#   .project-wrapper__projects--content--image
-      -#     =image_tag "IMG_3450.jpg", size: "300x200"
-      -#   .project-wrapper__projects--content--details
-      -#     .project-wrapper__projects--content--details--userImage
-      -#       =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
-      -#     .project-wrapper__projects--content--details--title
-      -#       ロシアへ行こう
-      -#     .project-wrapper__projects--content--details--date.clearfix
-      -#       2018年2月
-
-      -# .project-wrapper__projects--content
-      -#   .project-wrapper__projects--content--image
-      -#     =image_tag "IMG_7500.jpg", size: "300x200"
-      -#   .project-wrapper__projects--content--details
-      -#     .project-wrapper__projects--content--details--userImage
-      -#       =image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
-      -#     .project-wrapper__projects--content--details--title
-      -#       モンゴルへ行こう
-      -#     .project-wrapper__projects--content--details--date.clearfix
-      -#       2018年2月
     .moreProjects#more.clearfix
       もっと見る
   .login-wrapper
@@ -148,6 +63,7 @@
       .signupLinks__buttons.clearfix
         .signupLinks__buttons--upper
           .signupLinks__buttons--upper--facebook.btn
+            %i.fa.fa-facebook-official
             Facebookで新規登録/ログイン
           .signupLinks__buttons--upper--email
             = link_to "メールアドレスで新規登録", new_user_registration_path, class:"btn"
@@ -158,6 +74,7 @@
             または
         .signupLinks__buttons--bottom
           .signupLinks__buttons--bottom--google
+            %i.fa.fa-google-plus
             google+で新規登録/ログイン
     .loginLink
       = link_to "すでにユーザーの方はこちら", new_user_session_path, class:"btn"
