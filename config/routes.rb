@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :projects do
     resources :participants, only:[:new, :create]
   end
+  resources :reviews, only: [:new, :create]
 end
