@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   has_many :projects, through: :planners
   has_many :planners
+  has_many :reviews
+
 end
