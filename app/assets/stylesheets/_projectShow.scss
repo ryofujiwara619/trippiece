@@ -50,7 +50,10 @@
           float: left;
           line-height: 80px;
           margin-left: 20px;
-          color: orange;
+          .link{
+            text-decoration: none;
+            color: orange;
+          }
           }
         }
         &--introduction{

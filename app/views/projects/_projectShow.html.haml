@@ -16,7 +16,7 @@
           .project-show-wrapper__contents--left--top--userInfo--image
             =image_tag @user.image, size: "80x80", style: "border-radius:50%;"
           .project-show-wrapper__contents--left--top--userInfo--name
-            = @user.name
+            = link_to @user.name, user_path(@user.id), class: "link"
         .project-show-wrapper__contents--left--top--introduction
           = @project.introduction
 
