@@ -66,6 +66,10 @@
           .project-wrapper__projects--content--details--date.clearfix
             = project.departure_date.strftime("%Y年%m月")
 
+  .project-wrapper__revieLink.clearfix
+  - unless current_user.id == @user.id
+    = link_to "このUserの口コミを投稿する", new_user_review_path(@user.id)
+
 -# モーダル
 #drop-modal-wrapper
   = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link"
