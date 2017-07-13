@@ -37,5 +37,5 @@
 -# font-awesome モーダル
 #drop-modal-wrapper
   = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link"
-  = link_to "プロフィール", user_path(@user.id), class: "link"
-  = link_to "設定", edit_user_path(@user.id), class: "link"
+  = link_to "プロフィール", user_path(current_user.id), class: "link"
+  = link_to "設定", edit_user_path(@current_user.id), class: "link"
