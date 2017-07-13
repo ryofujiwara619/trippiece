@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 before_action :userProject
   def show
-    @projects = current_user.projects
+    @user = User.find(params[:id])
+    @projects = @user.projects
   end
 
   def update

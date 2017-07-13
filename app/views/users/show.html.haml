@@ -1,14 +1,26 @@
-= render "projects/topWrapper"
+-if user_signed_in?
+  = render "projects/topWrapper"
+- else
+  .top-wrapper
+    .top-wrapper__upper
+      .top-wrapper__upper--left
+        = link_to "trippiece", root_path, class: "link"
+      .top-wrapper__upper--right
+        %ul
+          %li
+            = link_to "会員登録（無料）", new_user_registration_path, class: "link"
+          %li
+            = link_to "ログイン", new_user_session_path, class: "link"
 
 .main-wrapper
   .main-wrapper--profile
     .main-wrapper--profile--top
       =image_tag "IMG_9087.jpg", size: "900x300"
     .main-wrapper--profile--profileImage
-      =image_tag current_user.image , class: "profileimage"
+      =image_tag @user.image , class: "profileimage"
     .main-wrapper--profile--middle
       .main-wrapper--profile--middle--name
-        = current_user.name
+        = @user.name
       %ul.main-wrapper--profile--middle--projects
         %li
           .main-wrapper--profile--middle--projects--count
@@ -35,12 +47,12 @@
       .main-wrapper--profile--bottom--title
         自己紹介
       .main-wrapper--profile--bottom--text
-        = current_user.selfintroduction
+        = @user.selfintroduction
   .main-wrapper--projects
 
 .project-wrapper
   %h1
-    = current_user.name + "さんの企画一覧"
+    = @user.name + "さんの企画一覧"
   .project-wrapper__projects
     - @projects.each do |project|
       .project-wrapper__projects--content
@@ -57,5 +69,5 @@
 -# モーダル
 #drop-modal-wrapper
   = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link"
-  = link_to "プロフィール", user_path(current_user.id), class: "link"
-  = link_to "設定", edit_user_path(current_user.id), class: "link"
+  = link_to "プロフィール", user_path(@user.id), class: "link"
+  = link_to "設定", edit_user_path(@user.id), class: "link"
