@@ -66,10 +66,28 @@
           .project-wrapper__projects--content--details--date.clearfix
             = project.departure_date.strftime("%Y年%m月")
 
-  .project-wrapper__revieLink.clearfix
-    -if user_signed_in?
-      - unless current_user.id == @user.id
-        = link_to "このUserの口コミを投稿する", new_user_review_path(@user.id)
+- if @reviews.present?
+  .userReview-wrapper.clearfix
+    .userReview-wrapper__averageRates
+      .userReview-wrapper__averageRates--title
+        = @user.name + "さんの平均評価"
+      .userReview-wrapper__averageRates--rate
+        = @rate.to_s
+    .userReview-wrapper__reviews
+      .userReview-wrapper__reviews--title
+        = @user.name + "さんの口コミ一覧"
+      - @reviews.each do |review|
+        .userReview-wrapper__reviews--contents
+          .userReview-wrapper__reviews--contents--reviewerName
+            = review.name + "さん"
+          .userReview-wrapper__reviews--contents--rate
+            = review.rate
+          .userReview-wrapper__reviews--contents--reviewText.clearfix
+            = review.review
+    .userReview-wrapper__link
+      -if user_signed_in?
+        - unless current_user.id == @user.id
+          = link_to "このUserの口コミを投稿する", new_user_review_path(@user.id), class: "link"
 
 -# モーダル
 #drop-modal-wrapper
