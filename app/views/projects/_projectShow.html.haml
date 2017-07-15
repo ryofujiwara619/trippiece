@@ -46,7 +46,7 @@
             観光
 
         .project-show-wrapper__contents--left--bottom--detail.clearfix
-          あああ
+          = @project.detail
 
     - unless user_signed_in? && current_user.id === @project.planner_id
       .project-show-wrapper__contents--right

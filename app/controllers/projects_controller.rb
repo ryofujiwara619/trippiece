@@ -37,7 +37,7 @@ before_action :userProject
 
   private
   def project_params
-    params.require(:project).permit(:title, :image, :introduction, :destination, :departure_date, :finish_date, planner_attributes: [:user_id]).merge(planner_id: current_user.id)
+    params.require(:project).permit(:title, :image, :introduction, :destination, :departure_date, :finish_date, :detail,planner_attributes: [:user_id]).merge(planner_id: current_user.id)
   end
 
   def userProject
