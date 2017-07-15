@@ -1,0 +1,24 @@
+= render "projects/topWrapper"
+
+.review-wrapper
+  .review-wrapper__forms
+    = form_for [@user, @review] do |f|
+      .review-wrapper__forms--title
+        口コミ投稿
+      .review-wrapper__forms--user
+        .review-wrapper__forms--user--image
+          = image_tag @user.image, size: "100x100", style: "border-radius:50%;"
+        .review-wrapper__forms--user--name
+          = @user.name
+
+      .review-wrapper__forms--rate.clearfix
+        = f.label :rate, value: "評価"
+        = f.number_field :rate, min: "0", max: "10"
+        = f.label :rate, value: "(10段階評価)"
+
+      .review-wrapper__forms--review
+        = f.label :review, value: "口コミ"
+        = f.text_area :review, class: "textArea", placeholder: "口コミを入力してください"
+
+      .review-wrapper__forms--submit
+        = f.submit "口コミを投稿する", class: "submit"
