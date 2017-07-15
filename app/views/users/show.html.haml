@@ -60,7 +60,7 @@
           = image_tag project.image, size: "300x200"
         .project-wrapper__projects--content--details
           .project-wrapper__projects--content--details--userImage
-            = image_tag "IMG_0741.jpg", size: "30x30", style: "border-radius:50%;"
+            = image_tag @user.image, size: "30x30", style: "border-radius:50%;"
           .project-wrapper__projects--content--details--title
             = link_to project.title, project_path(project.id)
           .project-wrapper__projects--content--details--date.clearfix
