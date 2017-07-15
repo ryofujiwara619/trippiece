@@ -3,6 +3,8 @@ before_action :userProject
   def show
     @user = User.find(params[:id])
     @projects = @user.projects
+    @reviews = Review.where(user_id: params[:id])
+    @rate = @reviews.average(:rate).round(1)
   end
 
   def update

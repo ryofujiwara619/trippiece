@@ -6,7 +6,7 @@ before_action :userProject
   end
 
   def create
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     @review = Review.new(review_params)
     if @review.save
       redirect_to root_path
@@ -17,7 +17,7 @@ before_action :userProject
 
   private
   def review_params
-    params.require(:review).permit(:name, :rate, :review).merge(user_id: @user.id)
+    params.require(:review).permit(:rate, :review).merge(name: current_user.name, user_id: @user.id)
   end
 
   def userProject
