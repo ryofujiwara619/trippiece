@@ -52,9 +52,11 @@
               = link_to project.title, project_path(project.id)
             .project-wrapper__projects--content--details--date.clearfix
               = project.departure_date.strftime("%Y年%m月")
+      .pagenation.clearfix
+        = paginate(@projects)
 
-    .moreProjects#more.clearfix
-      もっと見る
+    -# .moreProjects#more.clearfix
+    -#   もっと見る
   .login-wrapper
     %h1
       さあ、みんなで旅に出よう！
