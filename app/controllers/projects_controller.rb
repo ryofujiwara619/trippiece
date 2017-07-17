@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 before_action :userProject
   def index
-    @projects = Project.all
+    @projects = Project.all.page(params[:page]).per(6)
   end
 
   def show
