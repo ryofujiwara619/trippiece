@@ -44,11 +44,9 @@
   padding: 50px 50px;
   &__averageRates{
     &--title{
-      font-size: 20px;
+      font-size: 24px;
       color: white;
-      border-bottom: 3px solid white;
-      width: 250px;
-      text-align: center;
+      width: 300px;
     }
     &--rate{
       font-size: 40px;
@@ -56,19 +54,19 @@
       width: 100px;
       text-align: center;
       padding-top: 10px;
+      padding-left: 40px;
     }
   }
   &__reviews{
     margin-top: 20px;
     &--title{
-      font-size: 20px;
+      font-size: 24px;
       color: white;
-      border-bottom: 3px solid white;
-      width: 250px;
-      text-align: center;
+      width: 300px;
     }
     &--contents{
       margin-top: 20px;
+      padding-left: 60px;
       &--reviewerName{
         float: left;
         font-size: 20px;
@@ -88,8 +86,15 @@
       }
     }
   }
+  &__link{
+    .link{
+      color: white;
+      float: right;
+    }
+  }
 }
 
 .textArea{
   width: 100%;
+  outline: 0;
 }
