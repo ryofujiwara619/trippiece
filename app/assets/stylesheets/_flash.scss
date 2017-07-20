@@ -1,0 +1,14 @@
+.flash{
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  margin-top: 50px;
+  &__notice{
+    background: orange;
+  }
+  &__alert{
+    background: red;
+  }
+}

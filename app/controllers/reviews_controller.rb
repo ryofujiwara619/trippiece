@@ -11,6 +11,7 @@ before_action :userProject
     if @review.save
       redirect_to root_path
     else
+      flash[:alert] = "レビューの作成に失敗しました"
       render :new
     end
   end
