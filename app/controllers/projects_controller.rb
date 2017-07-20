@@ -4,6 +4,10 @@ before_action :userProject
     @projects = Project.all.page(params[:page]).per(6)
   end
 
+  def search
+    @projects = Project.where('title LIKE(?)', "%#{params[:search]}%").page(params[:page]).per(6)
+  end
+
   def show
     @project = Project.find(params[:id])
     @user = User.find(@project.planner_id)
@@ -16,8 +20,10 @@ before_action :userProject
   def create
     @project = Project.new(project_params)
     if @project.save
+      flash[:notice] = "企画の作成に成功しました"
       redirect_to root_path
     else
+      flash[:alert] = "企画の作成に失敗しました"
       redirect_to new_project_path
     end
   end
@@ -29,8 +35,10 @@ before_action :userProject
   def update
     @project = Project.find(params[:id])
     if @project.update(project_params)
+      flash[:notice] = "企画の更新に成功しました"
       redirect_to root_path
     else
+      flash[:alert] = "企画の更新に失敗しました"
       redirect_to eidt_project_path(@project.id)
     end
   end

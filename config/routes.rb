@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   end
   resources :projects do
     resources :participants, only:[:new, :create]
+    collection do
+      post 'search'
+    end
   end
 end

@@ -12,6 +12,10 @@
     z-index: 10;
     &--left{
       float: left;
+      li{
+        float: left;
+        margin-right: 100px;
+      }
       .link{
         color: white;
         &:hover{
