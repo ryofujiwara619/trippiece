@@ -66,8 +66,9 @@
           .project-wrapper__projects--content--details--date.clearfix
             = project.departure_date.strftime("%Y年%m月")
 
-- if @reviews.present?
-  .userReview-wrapper.clearfix
+
+.userReview-wrapper.clearfix
+  - if @reviews.present?
     .userReview-wrapper__averageRates
       .userReview-wrapper__averageRates--title
         = @user.name + "さんの平均評価"
@@ -84,10 +85,18 @@
             = review.rate
           .userReview-wrapper__reviews--contents--reviewText.clearfix
             = review.review
-    .userReview-wrapper__link
-      -if user_signed_in?
-        - unless current_user.id == @user.id
-          = link_to "このUserの口コミを投稿する", new_user_review_path(@user.id), class: "link"
+  - else
+    .userReview-wrapper__reviews
+      .userReview-wrapper__reviews--title
+        = @user.name + "さんの口コミ一覧"
+      .userReview-wrapper__reviews--contents
+        .userReview-wrapper__reviews--contents--reviewerName
+          まだ口コミはありません
+          
+  .userReview-wrapper__link
+    -if user_signed_in?
+      - unless current_user.id == @user.id
+        = link_to "このUserの口コミを投稿する", new_user_review_path(@user.id), class: "link"
 
 -# モーダル
 #drop-modal-wrapper
