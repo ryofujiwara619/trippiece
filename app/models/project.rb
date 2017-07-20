@@ -11,7 +11,7 @@ class Project < ActiveRecord::Base
   # accepts_nested_attributes_for :participants
   has_many :participants
 
-  has_one :user, through: :planners
-  has_many :planners
-  accepts_nested_attributes_for :planners
+  has_one :user, through: :planner
+  has_one :planner
+  accepts_nested_attributes_for :planner, allow_destroy: true
 end

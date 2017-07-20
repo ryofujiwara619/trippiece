@@ -1,5 +1,5 @@
 .edit-wrapper{
-  background: #e0e0e0;
+  background: black;
   height: 1000px;
   padding-top: 100px;
   &__main{
@@ -10,19 +10,19 @@
     &--left{
       float: left;
       width: 200px;
-      height: 900px;
+      height: 860px;
       border-right: 1px solid #e0e0e0;
-      padding-top: 40px;
+      padding-top: 30px;
       padding-left: 20px;
       font-size: 16px;
-      color: #d0d0d0;
+      color: gray;
     }
     &--right{
       float: left;
       padding-top: 30px;
       padding-left: 20px;
       font-size: 16px;
-      color: #d0d0d0;
+      color: gray;
       .form{
         height: 30px;
         width: 300px;
@@ -46,10 +46,8 @@
             width: 300px;
             position: relative;
             .upload{
-              
               font-size: 16px;
-              margin: 40px 0px;
-              margin: 0 auto;
+              margin: 20px 0px;
               cursor: pointer;
               position:absolute;
               left: 5px;
@@ -71,7 +69,7 @@
       &--editBtn{
         .editBtn{
         width: 150px;
-        height: 30px;
+        height: 50px;
         background: orange;
         border: none;
         margin-top: 50px;

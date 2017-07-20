@@ -1,7 +1,13 @@
 .top-wrapper
   .top-wrapper__upper
     .top-wrapper__upper--left
-      = link_to "trippiece", root_path, class: "link"
+      %ul
+        %li
+          = link_to "trippiece", root_path, class: "link"
+        %li
+          = form_tag(search_projects_path) do
+            = text_field_tag :search
+            = submit_tag '旅の検索'
     .top-wrapper__upper--right
       %ul
         %li#mylist
@@ -38,4 +44,4 @@
 #drop-modal-wrapper
   = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link"
   = link_to "プロフィール", user_path(current_user.id), class: "link"
-  = link_to "設定", edit_user_path(current_user.id), class: "link"
+  = link_to "設定", edit_user_path(@current_user.id), class: "link"

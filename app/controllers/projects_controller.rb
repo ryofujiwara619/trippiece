@@ -1,7 +1,11 @@
 class ProjectsController < ApplicationController
 before_action :userProject
   def index
-    @projects = Project.all
+    @projects = Project.all.page(params[:page]).per(6)
+  end
+
+  def search
+    @projects = Project.where('title LIKE(?)', "%#{params[:search]}%").page(params[:page]).per(6)
   end
 
   def show
@@ -16,9 +20,10 @@ before_action :userProject
   def create
     @project = Project.new(project_params)
     if @project.save
-      Planner.create(user_id: current_user.id, project_id: @project.id)
+      flash[:notice] = "企画の作成に成功しました"
       redirect_to root_path
     else
+      flash[:alert] = "企画の作成に失敗しました"
       redirect_to new_project_path
     end
   end
@@ -30,16 +35,17 @@ before_action :userProject
   def update
     @project = Project.find(params[:id])
     if @project.update(project_params)
-      Planner.create(user_id: current_user.id, project_id: @project.id)
+      flash[:notice] = "企画の更新に成功しました"
       redirect_to root_path
     else
+      flash[:alert] = "企画の更新に失敗しました"
       redirect_to eidt_project_path(@project.id)
     end
   end
 
   private
   def project_params
-    params.require(:project).permit(:title, :image, :introduction, :destination, :departure_date, :finish_date).merge(planner_id: current_user.id)
+    params.require(:project).permit(:title, :image, :introduction, :destination, :departure_date, :finish_date, :detail,planner_attributes: [:user_id]).merge(planner_id: current_user.id)
   end
 
   def userProject

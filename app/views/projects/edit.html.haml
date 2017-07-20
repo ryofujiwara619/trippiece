@@ -31,7 +31,7 @@
             .projectCreate-wrapper__top--introduction--left--userInfo--userName
               = current_user.name
           .projectCreate-wrapper__top--introduction--left--text.clearfix
-            = f.text_field :introduction, class: "form", val: @project.introduction
+            = f.text_area :introduction, class: "form", val: @project.introduction
         .projectCreate-wrapper__top--introduction--right
           旅への思い
 
@@ -57,7 +57,7 @@
       .projectCreate-wrapper__bottom--detail.clearfix
         .projectCreate-wrapper__bottom--detail--left
           .projectCreate-wrapper__bottom--detail--left--text.clearfix
-            = f.text_field :introduction, class: "form", placeholder: "(例)年末にインドに行きたいと考えています。"
+            = f.text_area :introduction, class: "form", placeholder: "(例)年末にインドに行きたいと考えています。"
         -# .projectCreate-wrapper__bottom--detail--right.clearfix
         -#   旅への思い
 

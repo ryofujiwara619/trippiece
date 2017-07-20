@@ -1,14 +1,21 @@
 class UsersController < ApplicationController
 before_action :userProject
   def show
-    @projects = current_user.projects
+    @user = User.find(params[:id])
+    @projects = @user.projects
+    if @user.reviews.present?
+      @reviews = @user.reviews
+      @rate = @reviews.average(:rate).round(1)
+    end
   end
 
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
+      flash[:notice] = "プロフィールを更新しました"
        redirect_to root_path
     else
+      flash[:alert] = "プロフィールを更新に失敗しました"
        render 'edit'
     end
   end

@@ -10,8 +10,10 @@ before_action :userProject
     @project = Project.find(project_params)
     @participant = Participant.new(participant_params)
     if @participant.save
+      flash[:notice] = "企画への申し込みが成功しました"
       redirect_to root_path
     else
+      flash[:alert] = "企画の申し込みに失敗しました"
       render :new
     end
   end

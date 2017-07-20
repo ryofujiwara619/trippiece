@@ -1,10 +1,10 @@
 .project-show-wrapper
-  .project-show-wrapper__title.clearfix
-    = "【" + @project.title + "】"
-    .project-show-wrapper__title--left
+  .project-show-wrapper__top
+    .project-show-wrapper__top--left
+      = "【" + @project.title + "】"
       企画詳細
   - if user_signed_in? && current_user.id === @project.planner_id
-    .project-show-wrapper__title--right
+    .project-show-wrapper__top--right
       = link_to "企画を編集", edit_project_path(@project.id), class: "link"
 
   .project-show-wrapper__contents.clearfix
@@ -16,7 +16,7 @@
           .project-show-wrapper__contents--left--top--userInfo--image
             =image_tag @user.image, size: "80x80", style: "border-radius:50%;"
           .project-show-wrapper__contents--left--top--userInfo--name
-            = @user.name
+            = link_to @user.name, user_path(@user.id), class: "link"
         .project-show-wrapper__contents--left--top--introduction
           = @project.introduction
 
@@ -46,7 +46,7 @@
             観光
 
         .project-show-wrapper__contents--left--bottom--detail.clearfix
-          あああ
+          = @project.detail
 
     - unless user_signed_in? && current_user.id === @project.planner_id
       .project-show-wrapper__contents--right

@@ -1,20 +1,20 @@
 .project-show-wrapper{
-  padding: 100px 200px;
-  background: #e0e0e0;
-  height: 2000px;
-  &__title{
+  padding: 50px 200px;
+  background: black;
+  height: 1500px;
+  &__top{
     color: gray;
     font-size: 36px;
     &--left{
       margin-top: 30px;
       padding-top: 40px;
       margin-bottom: 10px;
-      font-size: 20px;
+      font-size: 30px;
       float: left;
     }
     &--right{
       float: right;
-      margin-top: 10px;
+      margin-top: 80px;
       .link{
         font-size: 20px;
         text-decoration: none;
@@ -36,6 +36,7 @@
         &--image{
         width: 100%;
         height: 500px;
+        border: 1px solid black;
       }
       &--userInfo{
         width: 580px;
@@ -50,7 +51,10 @@
           float: left;
           line-height: 80px;
           margin-left: 20px;
-          color: orange;
+          .link{
+            text-decoration: none;
+            color: orange;
+          }
           }
         }
         &--introduction{
@@ -67,7 +71,6 @@
         margin-top: 50px;
         padding: 20px;
         width: 560px;
-        height: 500px;
         background: white;
         &--info{
           text-align: center;
