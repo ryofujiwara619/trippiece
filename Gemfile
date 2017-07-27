@@ -48,6 +48,7 @@ group :development, :test do
   gem 'mini_magick'
   gem 'pry-rails'
   gem 'kaminari'
+  gem 'slick_rails'
 end
 
 group :development do
