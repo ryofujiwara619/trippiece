@@ -49,6 +49,8 @@ group :development, :test do
   gem 'pry-rails'
   gem 'kaminari'
   gem 'slick_rails'
+  gem 'omniauth'
+  gem 'omniauth-facebook'
 end
 
 group :development do
