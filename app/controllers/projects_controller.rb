@@ -6,6 +6,7 @@ before_action :userProject
 
   def search
     @projects = Project.where('title LIKE(?)', "%#{params[:search]}%").page(params[:page]).per(6)
+    render "index"
   end
 
   def show
