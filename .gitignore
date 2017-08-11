@@ -13,3 +13,5 @@
 /tmp
 /public/
 /images/
+
+config/secrets.yml

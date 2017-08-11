@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170713021215) do
+ActiveRecord::Schema.define(version: 20170728082756) do
 
   create_table "participants", force: :cascade do |t|
     t.string   "name",       limit: 255,   null: false
@@ -74,6 +74,8 @@ ActiveRecord::Schema.define(version: 20170713021215) do
     t.string   "name",                   limit: 255
     t.text     "selfintroduction",       limit: 65535
     t.string   "image",                  limit: 255
+    t.string   "uid",                    limit: 255
+    t.string   "provider",               limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
