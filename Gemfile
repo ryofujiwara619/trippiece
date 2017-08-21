@@ -35,22 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'font-awesome-sass'
-  gem 'capistrano'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano3-unicorn'
-  gem 'haml-rails'
-  gem 'erb2haml'
-  gem 'devise'
-  gem 'carrierwave'
-  gem 'mini_magick'
   gem 'pry-rails'
-  gem 'kaminari'
-  gem 'slick_rails'
-  gem 'omniauth'
-  gem 'omniauth-facebook'
 end
 
 group :development do
@@ -67,3 +52,18 @@ group :production do
   gem 'unicorn'
 end
 
+  gem 'font-awesome-sass'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+  gem 'haml-rails'
+  gem 'erb2haml'
+  gem 'devise'
+  gem 'carrierwave'
+  gem 'mini_magick'
+  gem 'kaminari'
+  gem 'slick_rails'
+  gem 'omniauth'
+  gem 'omniauth-facebook'
