@@ -61,6 +61,8 @@ group :development do
   gem 'spring'
 end
 
+gem 'fog'
+
 group :production do
   gem 'unicorn'
 end
