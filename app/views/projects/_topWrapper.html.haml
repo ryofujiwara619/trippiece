@@ -5,9 +5,8 @@
         %li
           = link_to "trippiece", root_path, class: "link"
         %li
-          = form_tag(search_projects_path) do
-            = text_field_tag :search
-            = submit_tag '旅の検索'
+          = form_tag("/", method: :get) do #引数で飛び先のURLを指定、name属性でurlのキーを指定
+            %input.search_form{ :type => "text", name: "keyword" }
     .top-wrapper__upper--right
       %ul
         %li#mylist
