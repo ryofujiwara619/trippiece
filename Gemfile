@@ -35,6 +35,23 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pry-rails'
+end
+
+group :development do
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0'
+
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+end
+
+gem 'fog'
+
+group :production do
+  gem 'unicorn'
+end
+
   gem 'font-awesome-sass'
   gem 'capistrano'
   gem 'capistrano-rbenv'
@@ -46,22 +63,7 @@ group :development, :test do
   gem 'devise'
   gem 'carrierwave'
   gem 'mini_magick'
-  gem 'pry-rails'
   gem 'kaminari'
   gem 'slick_rails'
   gem 'omniauth'
   gem 'omniauth-facebook'
-end
-
-group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-end
-
-group :production do
-  gem 'unicorn'
-end
-

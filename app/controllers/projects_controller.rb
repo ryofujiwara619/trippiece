@@ -1,12 +1,11 @@
 class ProjectsController < ApplicationController
 before_action :userProject
   def index
-    @projects = Project.all.page(params[:page]).per(6)
-  end
-
-  def search
-    @projects = Project.where('title LIKE(?)', "%#{params[:search]}%").page(params[:page]).per(6)
-    render "index"
+    @projects = Project.where('title LIKE(?)', "%#{params[:keyword]}%").page(params[:page]).per(6)
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def show
