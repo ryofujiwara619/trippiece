@@ -13,6 +13,11 @@
 
 ActiveRecord::Schema.define(version: 20170728082756) do
 
+  create_table "commments", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "participants", force: :cascade do |t|
     t.string   "name",       limit: 255,   null: false
     t.date     "birthday",                 null: false

@@ -432,7 +432,6 @@ DEPENDENCIES
   kaminari
   mini_magick
   mysql2 (>= 0.3.13, < 0.5)
-  omniauth
   omniauth-facebook
   pry-rails
   rails (= 4.2.6)
@@ -446,4 +445,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.15.1
+   1.15.4
