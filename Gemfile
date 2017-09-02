@@ -65,5 +65,4 @@ end
   gem 'mini_magick'
   gem 'kaminari'
   gem 'slick_rails'
-  gem 'omniauth'
   gem 'omniauth-facebook'
