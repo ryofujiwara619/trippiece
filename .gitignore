@@ -15,4 +15,3 @@
 /images/
 
 config/secrets.yml
-config/initializers/devise.rb
