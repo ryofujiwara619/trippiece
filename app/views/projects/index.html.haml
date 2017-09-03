@@ -32,7 +32,7 @@
         .signupLinks__buttons--bottom
           .signupLinks__buttons--bottom--google
             %i.fa.fa-google-plus
-            google+で新規登録/ログイン
+            = link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path
     .loginLink
       = link_to "すでにユーザーの方はこちら", new_user_session_path, class:"btn"
 
