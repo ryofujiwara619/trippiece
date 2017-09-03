@@ -7,9 +7,11 @@
         利用規約とプライバシーポリシーに同意の上お進み下さい。
       .login__forms--upper--bySns
         .login__forms--upper--bySns--google
-          google+でログイン
+          %i.fa.fa-google-plus
+          = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, class:"btn"
         .login__forms--upper--bySns--facebook
-          Facebookでログイン
+          %i.fa.fa-facebook-official
+          = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, class:"btn"
       %p.clearfix
         trippieceが許可無くSNSへ投稿することはありません。
 

@@ -11,9 +11,11 @@
         trippieceが許可無くSNSへ投稿することはありません。
       .signUp__forms--upper--bySns
         .signUp__forms--upper--bySns--google
-          google+でログイン
+          %i.fa.fa-google-plus
+          = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, class:"btn"
         .signUp__forms--upper--bySns--facebook
-          Facebookでログイン
+          %i.fa.fa-facebook-official
+          = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, class:"btn"
 
     .signUp__forms--bottom.clearfix
       %p
