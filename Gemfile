@@ -66,3 +66,5 @@ end
   gem 'kaminari'
   gem 'slick_rails'
   gem 'omniauth-facebook'
+  gem 'omniauth-oauth2', '~> 1.3.1'
+  gem 'omniauth-google-oauth2'
