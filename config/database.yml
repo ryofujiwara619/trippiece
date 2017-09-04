@@ -47,16 +47,9 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-# production:
-#   <<: *default
-#   database: trippiece_production
-#   username: root
-#   password: <%= ENV['DATABASE_PASSWORD'] %>
-#   socket: /var/lib/mysql/mysql.sock
-
 production:
   <<: *default
-  database: ~~~（それぞれのアプリケーション名によって異なっています。こちらは編集しないでください）
+  database: trippiece_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
