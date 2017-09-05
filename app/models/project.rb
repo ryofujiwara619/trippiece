@@ -6,9 +6,6 @@ class Project < ActiveRecord::Base
   validates :finish_date,presence:true;
 
   mount_uploader :image, ImageUploader
-  # has_many :users, through: :participants
-  # has_many :participants
-  # accepts_nested_attributes_for :participants
   has_many :participants
 
   has_one :user, through: :planner
