@@ -1,6 +1,6 @@
 set :linked_files, %w{ config/secrets.yml }
 # config valid only for current version of Capistrano
-lock '3.8.2'
+lock '3.9.0'
 
 set :application, 'trippiece'
 set :repo_url,  'git@github.com:ryofujiwara619/trippiece.git'
