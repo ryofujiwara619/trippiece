@@ -52,12 +52,15 @@ group :production do
   gem 'unicorn'
 end
 
-  gem 'font-awesome-sass'
+group :development, :test do
   gem 'capistrano'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+end
+
+  gem 'font-awesome-sass'
   gem 'haml-rails'
   gem 'erb2haml'
   gem 'devise'
