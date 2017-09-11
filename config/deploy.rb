@@ -1,4 +1,4 @@
-set :linked_files, %w{ config/secrets.yml }
+# set :linked_files, %w{ config/secrets.yml }
 # config valid only for current version of Capistrano
 lock '3.9.0'
 
