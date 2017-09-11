@@ -16,6 +16,8 @@
         = f.number_field :rate, min: "0", max: "10"
         = f.label :rate, value: "(10段階評価)"
 
+      #star
+
       .review-wrapper__forms--review
         = f.label :review, value: "口コミ"
         = f.text_area :review, class: "textArea", placeholder: "口コミを入力してください"
