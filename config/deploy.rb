@@ -1,4 +1,4 @@
-set :linked_files, %w{ config/secrets.yml }
+set :linked_files, %w{ /var/www/trippiece/shared/config/secrets.yml }
 set :linked_files, %w{ config/devise.rb }
 # config valid only for current version of Capistrano
 lock '3.9.0'
