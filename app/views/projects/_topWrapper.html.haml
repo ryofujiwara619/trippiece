@@ -6,7 +6,7 @@
           = link_to "trippiece", root_path, class: "link"
         %li
           = form_tag("/", method: :get) do #引数で飛び先のURLを指定、name属性でurlのキーを指定
-            %input.search_form{ :type => "text", name: "keyword" }
+            %input.search_form{ :type => "text", name: "keyword", placeholder: "企画を検索" }
     .top-wrapper__upper--right
       %ul
         %li#mylist
@@ -17,13 +17,6 @@
           通知
         %li
           %i.fa.fa-plane
-          -# .top-wrapper__upper--right--drop-modal-wrapper
-          -#   %li
-          -#     = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link"
-          -#   %li
-          -#     = link_to "プロフィール", user_path(current_user.id), class: "link"
-          -#   %li
-          -#     = link_to "設定", edit_user_path(current_user.id), class: "link"
 
         %li
           = link_to "企画を作成", new_project_path, class: "link"
